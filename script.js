@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
       burger.textContent = menu.classList.contains('active') ? '✕' : '☰';
     });
 
-    // Закрытие при клике по ссылке
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         menu.classList.remove('active');
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Закрытие при клике вне меню
     document.addEventListener('click', function (e) {
       if (menu.classList.contains('active') &&
           !menu.contains(e.target) &&
@@ -61,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
-    // Фолбэк для старых браузеров
     revealEls.forEach(function (el) { el.classList.add('active'); });
   }
 
@@ -76,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.floor(eased * target) + suffix;
       if (progress < 1) requestAnimationFrame(tick);
       else el.textContent = target + suffix;
@@ -141,22 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (modalTask) modalTask.textContent = d.task || '';
     if (modalSolution) modalSolution.textContent = d.solution || '';
 
-    // Результаты
     if (modalResults) {
       modalResults.innerHTML = '';
       [d.r1, d.r2, d.r3].forEach(function (r) {
         if (!r) return;
         const parts = r.split('|');
-        const num = parts[0] || '';
-        const lbl = parts[1] || '';
         const div = document.createElement('div');
         div.className = 'modal-result';
-        div.innerHTML = '<div class="num">' + num + '</div><div class="lbl">' + lbl + '</div>';
+        div.innerHTML = '<div class="num">' + (parts[0] || '') +
+                        '</div><div class="lbl">' + (parts[1] || '') + '</div>';
         modalResults.appendChild(div);
       });
     }
 
-    // Стек
     if (modalStack) {
       modalStack.innerHTML = '';
       (d.stack || '').split(',').forEach(function (s) {
@@ -178,31 +172,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   cases.forEach(function (card) {
-    card.addEventListener('click', function (e) {
-      // Не открывать, если кликнули по кнопке CTA внутри модалки (её нет внутри карточки)
-      openModal(card);
-    });
+    card.addEventListener('click', function () { openModal(card); });
   });
 
   if (modalClose) modalClose.addEventListener('click', closeModal);
-
   if (modal) {
     modal.addEventListener('click', function (e) {
       if (e.target === modal) closeModal();
     });
   }
-
   if (modalCta) {
-    modalCta.addEventListener('click', function () {
-      closeModal();
-    });
+    modalCta.addEventListener('click', closeModal);
   }
-
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeModal();
   });
 
-  /* ========== 7. КАЛЬКУЛЯТОР СТОИМОСТИ ========== */
+  /* ========== 7. КАЛЬКУЛЯТОР ========== */
   const calcPrice = document.getElementById('calcPrice');
   const calcTime = document.getElementById('calcTime');
   const calcGroups = document.querySelectorAll('.calc-options');
@@ -210,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCalc() {
     let total = 0;
     let days = 0;
-
     calcGroups.forEach(function (group) {
       const active = group.querySelector('.calc-opt.active');
       if (active) {
@@ -218,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function () {
         days += parseInt(active.dataset.days, 10) || 0;
       }
     });
-
     if (calcPrice) calcPrice.textContent = total.toLocaleString('ru-RU') + ' ₽';
     if (calcTime) calcTime.textContent = 'Срок: ~' + days + ' дней';
   }
@@ -234,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-
   updateCalc();
 
   /* ========== 8. FAQ АККОРДЕОН ========== */
@@ -254,11 +237,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const formStatus = document.getElementById('formStatus');
 
   if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const name = form.querySelector('[name="name"]');
       const contact = form.querySelector('[name="contact"]');
+      const agree = form.querySelector('[name="agree"]');
 
       if (!name || !name.value.trim()) {
         showStatus('Пожалуйста, укажите имя', 'error');
@@ -268,11 +252,41 @@ document.addEventListener('DOMContentLoaded', function () {
         showStatus('Укажите email или телефон', 'error');
         return;
       }
+      if (agree && !agree.checked) {
+        showStatus('Подтвердите согласие с политикой конфиденциальности', 'error');
+        return;
+      }
 
-      // Имитация успешной отправки.
-      // В реальном проекте здесь fetch() на сервер или Telegram Bot API.
-      showStatus('Спасибо, ' + name.value.trim() + '! Заявка отправлена — свяжусь с вами в течение часа.', 'success');
-      form.reset();
+      const action = form.getAttribute('action') || '';
+      if (action.includes('formspree.io') && !action.includes('ВАШ_КОД')) {
+        try {
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.textContent;
+          btn.textContent = 'Отправка...';
+          btn.disabled = true;
+
+          const response = await fetch(action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          btn.textContent = originalText;
+          btn.disabled = false;
+
+          if (response.ok) {
+            showStatus('Спасибо, ' + name.value.trim() + '! Заявка отправлена — свяжусь в течение часа.', 'success');
+            form.reset();
+          } else {
+            showStatus('Ошибка отправки. Напишите в Telegram или на почту.', 'error');
+          }
+        } catch (err) {
+          showStatus('Ошибка сети. Напишите в Telegram или на почту.', 'error');
+        }
+      } else {
+        showStatus('Спасибо, ' + name.value.trim() + '! Заявка принята. (Подключите Formspree, чтобы получать заявки)', 'success');
+        form.reset();
+      }
     });
   }
 
@@ -280,9 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!formStatus) return;
     formStatus.textContent = text;
     formStatus.className = 'form-status ' + type;
-    setTimeout(function () {
-      formStatus.className = 'form-status';
-    }, 6000);
+    setTimeout(function () { formStatus.className = 'form-status'; }, 8000);
   }
 
   /* ========== 10. КНОПКА «ВВЕРХ» ========== */
@@ -305,5 +317,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  /* ========== 12. ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ========== */
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️';
+    }
+    themeToggle.addEventListener('click', function () {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  }
 
 });

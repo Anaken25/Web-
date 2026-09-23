@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Павел — веб-разработчик | Сайты под ключ</title>
-<meta name="description" content="Веб-разработчик с 5+ летним опытом. Лендинги, интернет-магазины, SEO, интеграции.">
+<title>Павел — веб-разработчик | Сайты под ключ от 30 000 ₽ за 7 дней</title>
+<meta name="description" content="Создаю сайты, которые приносят заявки: лендинги, интернет-магазины, корпоративные сайты. 5+ лет опыта, 50+ проектов. Работаю по договору.">
+<meta name="keywords" content="веб-разработчик, создание сайтов, лендинг, интернет-магазин, WordPress, SEO">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Павел — веб-разработчик | Сайты под ключ">
+<meta property="og:description" content="Лендинги, интернет-магазины, SEO. 50+ проектов, 5+ лет опыта.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,16 +17,21 @@
 <!-- ШАПКА -->
 <header class="header" id="header">
   <div class="container nav">
-    <div class="logo">Павел<span>.web</span></div>
+    <a href="#" class="logo">Павел<span>.web</span></a>
     <ul class="menu" id="menu">
       <li><a href="#services">Услуги</a></li>
+      <li><a href="#prices">Цены</a></li>
       <li><a href="#portfolio">Портфолио</a></li>
       <li><a href="#calc">Калькулятор</a></li>
-      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#about">Обо мне</a></li>
       <li><a href="#contacts">Контакты</a></li>
     </ul>
-    <a href="#contacts" class="btn btn-primary">Связаться</a>
-    <button class="burger" id="burger" aria-label="Меню">☰</button>
+    <div class="nav-right">
+      <a href="tel:+79001234567" class="nav-phone">📞 +7 (900) 265-80-10</a>
+      <a href="#contacts" class="btn btn-primary">Связаться</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">🌙</button>
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
   </div>
 </header>
 
@@ -33,12 +43,12 @@
       <h1>Создаю сайты, которые <span class="gradient">приносят клиентов</span></h1>
       <p>Веб-разработчик с опытом 5+ лет. Лендинги, корпоративные сайты, интернет-магазины, SEO и интеграции — под ключ.</p>
       <div class="hero-btns">
-        <a href="#contacts" class="btn btn-primary btn-lg">Обсудить проект</a>
+        <a href="#contacts" class="btn btn-primary btn-lg">Получить смету</a>
         <a href="#portfolio" class="btn btn-outline btn-lg">Смотреть работы</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num" data-count="5" data-suffix="+">0</div><div class="stat-label">лет в разработке</div></div>
-        <div><div class="stat-num" data-count="50" data-suffix="+">0</div><div class="stat-label">проектов сдано</div></div>
+        <div><div class="stat-num" data-count="5" data-suffix="+">0</div><div class="stat-label">лет опыта</div></div>
+        <div><div class="stat-num" data-count="50" data-suffix="+">0</div><div class="stat-label">проектов</div></div>
         <div><div class="stat-num" data-count="7" data-suffix="">0</div><div class="stat-label">дней на лендинг</div></div>
       </div>
     </div>
@@ -49,7 +59,7 @@
         <li><span class="check">✓</span> Скорость загрузки до 2 секунд</li>
         <li><span class="check">✓</span> Настройку SEO и аналитики</li>
         <li><span class="check">✓</span> Интеграции с CRM и платежами</li>
-        <li><span class="check">✓</span> Техподдержку после сдачи</li>
+        <li><span class="check">✓</span> Техподдержку 30 дней бесплатно</li>
       </ul>
     </div>
   </div>
@@ -74,23 +84,61 @@
   </div>
 </section>
 
-<!-- ПОЧЕМУ Я -->
-<section class="why">
+<!-- ЦЕНЫ -->
+<section id="prices" class="prices">
   <div class="container">
     <div class="section-head reveal">
-      <div class="label" style="color:#60a5fa">Преимущества</div>
-      <h2>Почему выбирают меня</h2>
-      <p>Работаю прозрачно и на результат</p>
+      <div class="label">Цены</div>
+      <h2>Пакеты <span class="gradient">услуг</span></h2>
+      <p>Прозрачные цены без скрытых платежей</p>
     </div>
-    <div class="why-grid">
-      <div class="why-card reveal"><div class="why-num">01</div><h4>Гарантия качества</h4><p>Правки на этапе разработки — бесплатно</p></div>
-      <div class="why-card reveal"><div class="why-num">02</div><h4>Скорость</h4><p>Лендинг от 7 дней, магазин от 4 недель</p></div>
-      <div class="why-card reveal"><div class="why-num">03</div><h4>Поддержка</h4><p>Первый месяц после сдачи — бесплатно</p></div>
-      <div class="why-card reveal"><div class="why-num">04</div><h4>Прозрачность</h4><p>Поэтапная оплата, договор, отчётность</p></div>
+    <div class="prices-grid">
+      <div class="price-card reveal">
+        <h3>Лендинг</h3>
+        <div class="price-value">от 30 000 ₽</div>
+        <div class="price-time">Срок: от 7 дней</div>
+        <ul>
+          <li>✅ Дизайн под ваш бизнес</li>
+          <li>✅ Адаптив под мобильные</li>
+          <li>✅ Форма заявки + CRM</li>
+          <li>✅ Яндекс.Метрика</li>
+          <li>✅ Базовое SEO</li>
+          <li>✅ Поддержка 30 дней</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
+      <div class="price-card popular reveal">
+        <div class="popular-badge">Хит</div>
+        <h3>Корпоративный</h3>
+        <div class="price-value">от 60 000 ₽</div>
+        <div class="price-time">Срок: от 3 недель</div>
+        <ul>
+          <li>✅ Всё из «Лендинга»</li>
+          <li>✅ До 10 страниц</li>
+          <li>✅ Каталог услуг</li>
+          <li>✅ Блог</li>
+          <li>✅ Мультиязычность</li>
+          <li>✅ Обучение по CMS</li>
+        </ul>
+        <a href="#contacts" class="btn btn-primary">Заказать</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Интернет-магазин</h3>
+        <div class="price-value">от 90 000 ₽</div>
+        <div class="price-time">Срок: от 4 недель</div>
+        <ul>
+          <li>✅ Каталог товаров</li>
+          <li>✅ Корзина + оплата</li>
+          <li>✅ Службы доставки</li>
+          <li>✅ Личный кабинет</li>
+          <li>✅ Интеграция с 1С</li>
+          <li>✅ SEO-оптимизация</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline">Заказать</a>
+      </div>
     </div>
   </div>
 </section>
-
 <!-- ПОРТФОЛИО -->
 <section id="portfolio" class="portfolio">
   <div class="container">
@@ -261,6 +309,71 @@
     </div>
   </div>
 </section>
+<!-- ОБО МНЕ -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Обо мне</div>
+      <h2>Кто будет <span class="gradient">делать ваш сайт</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="about-avatar">П</div>
+        <div class="about-badges">
+          <span>✅ 5+ лет опыта</span>
+          <span>✅ 50+ проектов</span>
+          <span>✅ Работаю по договору</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <h3>Привет! Меня зовут Павел</h3>
+        <p>Я веб-разработчик и дизайнер. Специализируюсь на создании сайтов под ключ: от лендингов до интернет-магазинов. За 5+ лет реализовал более 50 проектов для малого и среднего бизнеса.</p>
+        <p>Работаю прозрачно: сначала обсуждаем задачу, потом я предлагаю решение, сроки и стоимость. Вы всегда знаете, на каком этапе находится проект.</p>
+        <div class="about-stack">
+          <h4>Технологии:</h4>
+          <div class="stack">
+            <span>WordPress</span><span>Tilda</span><span>WooCommerce</span>
+            <span>OpenCart</span><span>HTML/CSS/JS</span><span>PHP</span>
+            <span>Figma</span><span>Яндекс.Метрика</span><span>amoCRM</span>
+          </div>
+        </div>
+        <a href="#contacts" class="btn btn-primary">Обсудить проект</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ГАРАНТИИ -->
+<section class="guarantees">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Гарантии</div>
+      <h2>Работаю <span class="gradient">без риска</span> для вас</h2>
+    </div>
+    <div class="guarantees-grid">
+      <div class="guarantee reveal">
+        <div class="guarantee-icon">📝</div>
+        <h4>Договор</h4>
+        <p>Работаю официально по договору. Все условия фиксируются.</p>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee-icon">💰</div>
+        <h4>Поэтапная оплата</h4>
+        <p>50% предоплата, остаток — после сдачи проекта.</p>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee-icon">🔧</div>
+        <h4>Правки бесплатно</h4>
+        <p>30 дней после сдачи — правки и консультации бесплатно.</p>
+      </div>
+      <div class="guarantee reveal">
+        <div class="guarantee-icon">🛡</div>
+        <h4>Возврат денег</h4>
+        <p>Если результат не устроит на этапе прототипа — верну предоплату.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
 <section class="faq">
@@ -274,6 +387,7 @@
       <div class="faq-item"><div class="faq-q">Сколько времени занимает разработка?</div><div class="faq-a">Лендинг — от 7 дней, корпоративный — от 3 недель, магазин — от 4 недель.</div></div>
       <div class="faq-item"><div class="faq-q">Как происходит оплата?</div><div class="faq-a">Поэтапно: 50% предоплата, остаток — после сдачи. Работаю по договору.</div></div>
       <div class="faq-item"><div class="faq-q">Есть ли техподдержка?</div><div class="faq-a">Да, первый месяц после запуска — бесплатно.</div></div>
+      <div class="faq-item"><div class="faq-q">Вы работаете с клиентами из других городов?</div><div class="faq-a">Да, работаю удалённо по всей России и СНГ. Общаюсь в Telegram, WhatsApp, Zoom.</div></div>
     </div>
   </div>
 </section>
@@ -282,7 +396,7 @@
 <section class="cta-final">
   <div class="container">
     <h2>Готовы обсудить ваш проект?</h2>
-    <p>Напишите — отвечу в течение часа и предложу решение</p>
+    <p>Напишите — отвечу в течение 15 минут и предложу решение</p>
     <a href="#contacts" class="btn btn-white btn-lg">Оставить заявку</a>
   </div>
 </section>
@@ -293,22 +407,49 @@
     <div class="section-head reveal">
       <div class="label">Контакты</div>
       <h2>Свяжитесь <span class="gradient">со мной</span></h2>
+      <p>Отвечаю в течение 15 минут в рабочее время</p>
     </div>
     <div class="contacts-grid">
-      <div>
-        <a href="mailto:snajk01@yandex.ru" class="contact-item"><div class="ico">📩</div><div><strong>Email</strong><span>hello@pavelweb.ru</span></div></a>
-        <a href="https://t.me/Feniks" target="_blank" class="contact-item"><div class="ico">💬</div><div><strong>Telegram</strong><span>@Feniks</span></div></a>
-        <a href="https://wa.me/79002658010" target="_blank" class="contact-item"><div class="ico">📱</div><div><strong>WhatsApp</strong><span>+7 (999) 000-00-00</span></div></a>
-        <a href="tel:+79002658010" class="contact-item"><div class="ico">📞</div><div><strong>Телефон</strong><span>+7 (999) 000-00-00</span></div></a>
+      <div class="contacts-list">
+        <a href="mailto:hello@pavelweb.ru" class="contact-item">
+          <div class="ico">📩</div>
+          <div><strong>Email</strong><span>hello@pavelweb.ru</span></div>
+        </a>
+        <a href="https://t.me/ваш_ник" target="_blank" rel="noopener" class="contact-item">
+          <div class="ico">💬</div>
+          <div><strong>Telegram</strong><span>@ваш_ник</span></div>
+        </a>
+        <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="contact-item">
+          <div class="ico">📱</div>
+          <div><strong>WhatsApp</strong><span>+7 (900) 123-45-67</span></div>
+        </a>
+        <a href="tel:+79001234567" class="contact-item">
+          <div class="ico">📞</div>
+          <div><strong>Телефон</strong><span>+7 (900) 123-45-67</span></div>
+        </a>
+        <div class="contact-item">
+          <div class="ico">📍</div>
+          <div><strong>География</strong><span>Работаю удалённо по России и СНГ</span></div>
+        </div>
       </div>
-      <form class="form-card" id="contactForm">
+      <form class="form-card" id="contactForm" action="https://formspree.io/f/ВАШ_КОД" method="POST">
         <h3>Оставить заявку</h3>
         <p class="sub">Заполните форму — свяжусь с вами в течение часа</p>
-        <div class="form-group"><input type="text" name="name" required placeholder="Ваше имя"></div>
-        <div class="form-group"><input type="text" name="contact" required placeholder="Email или телефон"></div>
-        <div class="form-group"><textarea name="message" placeholder="Расскажите о проекте"></textarea></div>
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Ваше имя">
+        </div>
+        <div class="form-group">
+          <input type="text" name="contact" required placeholder="Email или телефон">
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Расскажите о проекте: тип сайта, задачи, сроки"></textarea>
+        </div>
+        <label class="form-checkbox">
+          <input type="checkbox" name="agree" required>
+          <span>Согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+        </label>
         <button type="submit" class="btn btn-primary" style="width:100%">Отправить заявку</button>
-        <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой данных</p>
+        <p class="form-note">Или напишите в Telegram — отвечу быстрее</p>
         <div class="form-status" id="formStatus"></div>
       </form>
     </div>
@@ -319,26 +460,43 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div><div class="logo" style="margin-bottom:14px">Павел<span>.web</span></div><p>Веб-разработчик. Создаю сайты, которые приносят клиентов.</p></div>
-      <div><h4>Навигация</h4><a href="#services">Услуги</a><a href="#portfolio">Портфолио</a><a href="#calc">Калькулятор</a></div>
-      <div><h4>Контакты</h4><a href="mailto:hello@pavelweb.ru">hello@pavelweb.ru</a><a href="https://t.me/@Feniks">Telegram</a></div>
+      <div>
+        <div class="logo" style="margin-bottom:14px">Павел<span>.web</span></div>
+        <p>Веб-разработчик. Создаю сайты, которые приносят клиентов. 5+ лет, 50+ проектов.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#about">Обо мне</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="mailto:hello@pavelweb.ru">hello@pavelweb.ru</a>
+        <a href="https://t.me/ваш_ник">Telegram</a>
+        <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </div>
     </div>
-    <div class="footer-bottom">© 2025 Павел — веб-разработчик. Все права защищены.</div>
+    <div class="footer-bottom">
+      © 2025 Павел — веб-разработчик. Все права защищены.
+    </div>
   </div>
 </footer>
 
 <!-- ПЛАВАЮЩИЕ КНОПКИ -->
 <div class="float-btns">
-  <a href="https://t.me/username" target="_blank" class="float-btn f-tg" title="Telegram">✈</a>
-  <a href="https://wa.me/79002658010" target="_blank" class="float-btn f-wa" title="WhatsApp">✆</a>
+  <a href="https://t.me/ваш_ник" target="_blank" rel="noopener" class="float-btn f-tg" title="Telegram">✈</a>
+  <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="float-btn f-wa" title="WhatsApp">✆</a>
   <button class="float-btn f-up" id="upBtn" title="Наверх">↑</button>
 </div>
 
 <!-- МОДАЛЬНОЕ ОКНО -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
-    <button class="modal-close" id="modalClose">×</button>
-    <div class="modal-hero" id="modalHero"></div>
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+    <div class="modal-hero" id="modalHero"><span></span></div>
     <div class="modal-content">
       <span class="modal-tag" id="modalTag"></span>
       <h2 id="modalTitle"></h2>
