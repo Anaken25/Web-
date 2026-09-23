@@ -274,10 +274,242 @@ footer{background:var(--bg-dark);color:#94a3b8;padding:50px 0 30px}
 .modal-result .lbl{font-size:12px;color:#166534;margin-top:4px;font-weight:600}
 
 /* ================= АДАПТИВ ================= */
-@media (max-width:1000px){
-  .hero-grid,.contacts-grid,.calc-wrap{grid-template-columns:1fr;gap:50px}
-  .hero h1{font-size:44px}
+
+/* ================= МОБИЛЬНАЯ АДАПТАЦИЯ ================= */
+
+/* ---------- Планшеты (до 1024px) ---------- */
+@media (max-width:1024px){
+  .container{padding:0 20px}
+  .hero{padding:150px 0 80px}
+  .hero-grid{grid-template-columns:1fr;gap:50px}
+  .hero h1{font-size:42px;letter-spacing:-1.2px}
+  .hero p{font-size:17px;max-width:100%}
+  .hero-card{animation:none}
   .services-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:repeat(2,1fr)}
+  .contacts-grid{grid-template-columns:1fr;gap:40px}
+  .calc-wrap{grid-template-columns:1fr;gap:36px}
   .calc-result{position:static}
-  .footer-grid{grid
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .menu{gap:24px}
+}
+
+/* ---------- Телефоны (до 768px) ---------- */
+@media (max-width:768px){
+  html{scroll-padding-top:70px}
+  body{font-size:15px}
+
+  /* Контейнер и секции */
+  .container{padding:0 18px}
+  section{padding:60px 0}
+  .section-head{margin-bottom:44px}
+  .section-head .label{font-size:11.5px;letter-spacing:1.5px;margin-bottom:10px}
+  .section-head h2{font-size:28px;letter-spacing:-1px;margin-bottom:12px}
+  .section-head p{font-size:15px;padding:0 6px}
+
+  /* Шапка */
+  .header{padding:12px 0}
+  .header.scrolled{padding:10px 0}
+  .logo{font-size:20px}
+  .nav{gap:12px}
+  .menu{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:var(--card);flex-direction:column;padding:22px 24px;
+    gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.15);
+    border-radius:0 0 20px 20px;border-top:1px solid var(--border);
+  }
+  .menu.active{display:flex}
+  .menu a{font-size:16px;padding:8px 0;width:100%}
+  .menu a::after{display:none}
+  .header .btn-primary{display:none}
+  .burger{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:22px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--border)}
+  .theme-toggle{width:38px;height:38px;font-size:16px}
+
+  /* Hero */
+  .hero{padding:110px 0 60px}
+  .hero::before,.hero::after{display:none}
+  .hero-badge{font-size:12px;padding:7px 14px;margin-bottom:18px}
+  .hero-badge .dot{width:7px;height:7px}
+  .hero h1{font-size:30px;letter-spacing:-1px;line-height:1.15;margin-bottom:18px}
+  .hero p{font-size:15.5px;margin-bottom:28px}
+  .hero-btns{gap:12px;margin-bottom:36px}
+  .hero-btns .btn{width:100%;padding:15px 24px;font-size:15px}
+  .hero-stats{gap:18px;justify-content:space-between;flex-wrap:nowrap}
+  .hero-stats > div{flex:1;min-width:0;text-align:center}
+  .stat-num{font-size:24px;letter-spacing:-1px}
+  .stat-label{font-size:11.5px;line-height:1.3}
+
+  /* Hero-карточка */
+  .hero-card{padding:24px 22px;border-radius:20px;animation:none}
+  .hero-card h3{font-size:17px;margin-bottom:16px}
+  .hero-card li{font-size:14px;padding:11px 0;gap:10px}
+  .check{width:20px;height:20px;font-size:11px}
+
+  /* Услуги */
+  .services-grid{grid-template-columns:1fr;gap:16px}
+  .service{padding:26px 22px;border-radius:20px}
+  .service-icon{width:52px;height:52px;font-size:24px;margin-bottom:16px}
+  .service-icon svg{width:26px;height:26px}
+  .service h3{font-size:18px;margin-bottom:8px}
+  .service p{font-size:14.5px}
+  .service-price{font-size:14.5px;margin-top:14px}
+
+  /* Почему я */
+  .why-grid{grid-template-columns:1fr;gap:14px}
+  .why-card{padding:24px 22px;border-radius:18px}
+  .why-num{font-size:28px;margin-bottom:10px}
+  .why-card h4{font-size:16px}
+  .why-card p{font-size:14px}
+
+  /* Фильтры */
+  .filters{gap:8px;margin-bottom:30px}
+  .filter{padding:9px 16px;font-size:13px}
+
+  /* Портфолио */
+  .portfolio-grid{grid-template-columns:1fr;gap:20px}
+  .case{border-radius:20px}
+  .case-preview{height:170px}
+  .case-tag{font-size:10.5px;padding:5px 11px;top:14px;left:14px}
+  .case-title{font-size:17px;bottom:16px;left:16px;right:16px}
+  .case-body{padding:24px 22px}
+  .case-body h3{font-size:18px}
+  .case-task{font-size:13.5px;margin-bottom:18px;padding-bottom:18px}
+  .metrics{gap:8px;margin-bottom:18px}
+  .metric{padding:11px 6px;border-radius:10px}
+  .metric-num{font-size:18px}
+  .metric-label{font-size:10.5px}
+  .stack{gap:5px;margin-bottom:18px}
+  .stack span{font-size:11px;padding:4px 9px}
+  .case-btn{padding:13px;font-size:14.5px;border-radius:10px}
+
+  /* Калькулятор */
+  .calc-wrap{gap:28px}
+  .calc-group{margin-bottom:24px}
+  .calc-group>label{font-size:14px;margin-bottom:10px}
+  .calc-options{grid-template-columns:1fr;gap:10px}
+  .calc-opt{padding:14px 16px;font-size:14px;border-radius:12px}
+  .calc-opt strong{font-size:14.5px}
+  .calc-opt small{font-size:12px}
+  .calc-result{padding:26px 22px;border-radius:20px}
+  .calc-result h3{font-size:14.5px;margin-bottom:12px}
+  .calc-price{font-size:34px;letter-spacing:-1.5px}
+  .calc-time{font-size:14px;margin-bottom:20px}
+
+  /* Отзывы */
+  .reviews-grid{grid-template-columns:1fr;gap:16px}
+  .review{padding:26px 22px;border-radius:18px}
+  .review::before{font-size:60px;top:10px;right:18px}
+  .stars{font-size:15px;margin-bottom:12px;letter-spacing:1.5px}
+  .review-text{font-size:14.5px;margin-bottom:18px}
+  .avatar{width:42px;height:42px;font-size:17px}
+  .author-name{font-size:14.5px}
+  .author-role{font-size:12.5px}
+
+  /* FAQ */
+  .faq-q{padding:18px 20px;font-size:15px;gap:14px}
+  .faq-q::after{font-size:22px}
+  .faq-a{font-size:14.5px;padding:0 20px}
+  .faq-item.open .faq-a{padding:0 20px 20px}
+
+  /* CTA */
+  .cta-final{padding:70px 0}
+  .cta-final h2{font-size:26px;letter-spacing:-1px;margin-bottom:14px}
+  .cta-final p{font-size:15.5px;margin-bottom:26px;padding:0 6px}
+  .cta-final .btn-lg{padding:15px 32px;font-size:15px;width:100%;max-width:340px}
+
+  /* Контакты */
+  .contacts-grid{gap:28px}
+  .contact-item{padding:14px 16px;border-radius:14px;margin-bottom:12px;gap:12px}
+  .contact-item:hover{transform:none}
+  .contact-item .ico{width:42px;height:42px;border-radius:12px}
+  .contact-item .ico svg{width:20px;height:20px}
+  .contact-item strong{font-size:12px}
+  .contact-item span{font-size:14.5px;word-break:break-word;overflow-wrap:anywhere}
+
+  /* Форма */
+  .form-card{padding:26px 22px;border-radius:20px}
+  .form-card h3{font-size:20px}
+  .form-card .sub{font-size:13.5px;margin-bottom:22px}
+  .form-group{margin-bottom:14px}
+  .form-group input,.form-group textarea{padding:14px 16px;font-size:15px;border-radius:12px}
+  .form-group textarea{min-height:100px}
+  .form-note{font-size:11.5px;margin-top:12px}
+  .form-status{font-size:13.5px;padding:12px 14px}
+
+  /* Кнопки */
+  .btn{padding:14px 26px;font-size:14.5px}
+  .btn-lg{padding:16px 32px;font-size:15px}
+
+  /* Подвал */
+  footer{padding:40px 0 24px}
+  .footer-grid{grid-template-columns:1fr;gap:26px;margin-bottom:30px}
+  .footer-grid h4{font-size:15px;margin-bottom:12px}
+  .footer-grid p,.footer-grid a{font-size:13.5px}
+  .footer-bottom{font-size:12.5px;padding-top:20px}
+
+  /* Плавающие кнопки */
+  .float-btns{bottom:16px;right:16px;gap:10px}
+  .float-btn{width:50px;height:50px;font-size:20px}
+  .float-btn:hover{transform:scale(1.05)}
+
+  /* Модальное окно */
+  .modal-overlay{padding:0;align-items:flex-end}
+  .modal{border-radius:22px 22px 0 0;max-height:92vh;animation:slideUp .35s cubic-bezier(.4,0,.2,1)}
+  .modal-close{top:14px;right:14px;width:38px;height:38px;font-size:20px}
+  .modal-hero{height:140px;font-size:18px;padding:24px}
+  .modal-content{padding:24px 22px}
+  .modal-content h2{font-size:22px}
+  .modal-tag{font-size:11px;padding:4px 11px;margin-bottom:14px}
+  .modal-block{margin-bottom:22px}
+  .modal-block h4{font-size:12px;margin-bottom:10px}
+  .modal-block p{font-size:14.5px}
+  .modal-results{grid-template-columns:1fr;gap:10px}
+  .modal-result{padding:14px;border-radius:12px}
+  .modal-result .num{font-size:20px}
+  .modal-result .lbl{font-size:11.5px}
+}
+
+/* ---------- Маленькие телефоны (до 480px) ---------- */
+@media (max-width:480px){
+  .container{padding:0 16px}
+  .hero{padding:100px 0 50px}
+  .hero h1{font-size:26px}
+  .hero p{font-size:15px}
+  .hero-stats{gap:12px}
+  .stat-num{font-size:22px}
+  .stat-label{font-size:11px}
+
+  .section-head h2{font-size:24px}
+  .section-head p{font-size:14.5px}
+
+  .services-grid,.why-grid,.portfolio-grid,.reviews-grid{gap:14px}
+  .service{padding:24px 20px}
+  .case-body{padding:22px 20px}
+  .case-preview{height:150px}
+
+  .metrics{grid-template-columns:1fr 1fr}
+  .metric:nth-child(3){grid-column:1 / -1}
+
+  .cta-final h2{font-size:22px}
+  .calc-price{font-size:30px}
+  .float-btn{width:46px;height:46px;font-size:18px}
+  .modal-hero{height:120px;font-size:16px}
+  .modal-content{padding:22px 18px}
+}
+
+/* ---------- Очень маленькие (до 360px) ---------- */
+@media (max-width:360px){
+  .container{padding:0 14px}
+  .hero h1{font-size:24px}
+  .section-head h2{font-size:22px}
+  .hero-stats{flex-wrap:wrap;gap:14px;justify-content:flex-start}
+  .hero-stats > div{flex:0 0 auto;text-align:left}
+  .filter{padding:8px 14px;font-size:12.5px}
+  .float-btn{width:44px;height:44px;font-size:17px}
+}
+
+/* ---------- Ландшафт на телефоне ---------- */
+@media (max-height:500px) and (orientation:landscape){
+  .hero{padding:90px 0 40px}
+  .modal-hero{height:100px}
+}
