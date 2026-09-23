@@ -228,6 +228,8 @@ footer{background:#020617;color:#94a3b8;padding:50px 0 30px}
 .modal-result .lbl{font-size:12px;color:#166534;margin-top:4px;font-weight:600}
 
 /* ===== АДАПТИВ ===== */
+
+/* Планшеты */
 @media (max-width:1000px){
   .hero-grid,.contacts-grid,.calc-wrap{grid-template-columns:1fr;gap:50px}
   .hero h1{font-size:44px}
@@ -235,31 +237,148 @@ footer{background:#020617;color:#94a3b8;padding:50px 0 30px}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .calc-result{position:static}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-card{animation:none}
 }
+
+/* Телефоны */
 @media (max-width:760px){
-  .header{padding:14px 0}
+  html{scroll-padding-top:70px}
+  .container{padding:0 18px}
+
+  .header{padding:12px 0}
   .header.scrolled{padding:10px 0}
-  .menu{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:26px;gap:18px;box-shadow:0 20px 50px rgba(0,0,0,.12);border-radius:0 0 20px 20px}
+  .logo{font-size:20px}
+
+  .menu{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:#fff;flex-direction:column;padding:22px;
+    gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.12);
+    border-radius:0 0 20px 20px;
+  }
   .menu.active{display:flex}
+  .menu a{font-size:16px;padding:8px 0}
   .header .btn-primary{display:none}
-  .burger{display:block}
-  .hero{padding:130px 0 70px}
-  .hero h1{font-size:34px;letter-spacing:-1px}
-  .hero p{font-size:16px}
-  .hero-stats{gap:28px}
-  .stat-num{font-size:30px}
-  .section-head h2{font-size:32px;letter-spacing:-1px}
-  .section-head p{font-size:16px}
-  section{padding:70px 0}
-  .services-grid,.portfolio-grid,.reviews-grid,.why-grid{grid-template-columns:1fr}
-  .modal-results{grid-template-columns:1fr}
-  .modal-content{padding:26px}
-  .cta-final h2{font-size:32px}
-  .footer-grid{grid-template-columns:1fr;gap:30px}
-  .float-btns{bottom:18px;right:18px}
-  .float-btn{width:54px;height:54px;font-size:22px}
+  .burger{display:block;font-size:24px}
+
+  .hero{padding:110px 0 60px}
+  .hero h1{font-size:32px;letter-spacing:-1px;line-height:1.15}
+  .hero p{font-size:15.5px;margin-bottom:28px}
+  .hero-badge{font-size:12.5px;padding:7px 14px}
+  .hero-btns{gap:12px;margin-bottom:36px}
+  .hero-btns .btn{width:100%;padding:15px 24px;font-size:15px}
+  .hero-stats{gap:20px;justify-content:space-between}
+  .hero-stats > div{flex:1;min-width:90px}
+  .stat-num{font-size:26px}
+  .stat-label{font-size:12.5px}
+  .hero-card{padding:26px;border-radius:22px;animation:none}
+  .hero-card h3{font-size:17px}
+  .hero-card li{font-size:14.5px;padding:12px 0}
+
+  section{padding:60px 0}
+  .section-head{margin-bottom:44px}
+  .section-head .label{font-size:12px;letter-spacing:1.5px;margin-bottom:12px}
+  .section-head h2{font-size:28px;letter-spacing:-1px;margin-bottom:14px}
+  .section-head p{font-size:15px}
+
+  .services-grid,.portfolio-grid,.reviews-grid,.why-grid{grid-template-columns:1fr;gap:20px}
+  .service{padding:28px 24px;border-radius:20px}
+  .service-icon{width:52px;height:52px;font-size:24px;margin-bottom:18px}
+  .service h3{font-size:18px}
+  .service p{font-size:14.5px}
+
+  .why-card{padding:26px 22px}
+  .why-num{font-size:30px}
+
+  .filters{gap:8px;margin-bottom:32px}
+  .filter{padding:9px 18px;font-size:13px}
+
+  .case-preview{height:170px;font-size:17px;padding:20px}
+  .case-tag{font-size:10.5px;padding:5px 11px;top:14px;left:14px}
+  .case-body{padding:24px}
+  .case-body h3{font-size:18px}
+  .case-task{font-size:13.5px;padding-bottom:18px;margin-bottom:18px}
+  .metrics{gap:8px;margin-bottom:18px}
+  .metric{padding:11px 6px}
+  .metric-num{font-size:18px}
+  .metric-label{font-size:10.5px}
+  .stack span{font-size:11px;padding:4px 9px}
+  .case-btn{padding:13px;font-size:14.5px}
+
+  .calc-wrap{gap:32px}
+  .calc-group{margin-bottom:26px}
+  .calc-group > label{font-size:14px;margin-bottom:12px}
+  .calc-options{grid-template-columns:1fr;gap:10px}
+  .calc-opt{padding:14px 16px;font-size:14px}
+  .calc-result{padding:28px;border-radius:20px;position:static}
+  .calc-result h3{font-size:15px;margin-bottom:14px}
+  .calc-price{font-size:36px;letter-spacing:-1.5px}
+  .calc-time{font-size:14px;margin-bottom:20px}
+
+  .reviews-grid{gap:18px}
+  .review{padding:26px 22px;border-radius:18px}
+  .review-text{font-size:14.5px;margin-bottom:18px}
+  .avatar{width:42px;height:42px;font-size:17px}
+  .author-name{font-size:14.5px}
+  .author-role{font-size:12.5px}
+
+  .faq-q{padding:18px 20px;font-size:15px;gap:14px}
+  .faq-q::after{font-size:22px}
+  .faq-a{font-size:14.5px}
+  .faq-item.open .faq-a{padding:0 20px 20px}
+
+  .cta-final{padding:70px 0}
+  .cta-final h2{font-size:28px;letter-spacing:-1px;margin-bottom:16px}
+  .cta-final p{font-size:16px;margin-bottom:28px}
+  .cta-final .btn-lg{padding:15px 32px;font-size:15px;width:100%}
+
+  .contacts-grid{gap:32px}
+  .contact-item{padding:14px 16px;border-radius:14px;margin-bottom:14px}
+  .contact-item .ico{width:42px;height:42px;font-size:19px;border-radius:12px}
+  .contact-item strong{font-size:12px}
+  .contact-item span{font-size:14.5px;word-break:break-word}
+  .form-card{padding:26px;border-radius:20px}
+  .form-card h3{font-size:20px}
+  .form-card .sub{font-size:13.5px;margin-bottom:22px}
+  .form-group input,.form-group textarea{padding:14px 16px;font-size:15px}
+  .btn{padding:14px 26px;font-size:14.5px}
+  .btn-lg{padding:16px 32px;font-size:15px}
+
+  .footer-grid{grid-template-columns:1fr;gap:26px;margin-bottom:30px}
+  .footer-grid h4{font-size:15px;margin-bottom:14px}
+  footer{padding:40px 0 24px}
+  .footer-bottom{font-size:13px;padding-top:22px}
+
+  .float-btns{bottom:16px;right:16px;gap:10px}
+  .float-btn{width:50px;height:50px;font-size:20px}
+
+  .modal-overlay{padding:0;align-items:flex-end}
+  .modal{border-radius:22px 22px 0 0;max-height:92vh}
+  .modal-close{top:14px;right:14px;width:38px;height:38px;font-size:20px}
+  .modal-hero{height:140px;font-size:18px;padding:24px}
+  .modal-content{padding:24px 22px}
+  .modal-content h2{font-size:22px}
+  .modal-tag{font-size:11px;padding:4px 11px;margin-bottom:16px}
+  .modal-block{margin-bottom:22px}
+  .modal-block h4{font-size:12px;margin-bottom:10px}
+  .modal-block p{font-size:14.5px}
+  .modal-results{grid-template-columns:1fr;gap:10px}
+  .modal-result{padding:14px}
+  .modal-result .num{font-size:20px}
+  .modal-result .lbl{font-size:11.5px}
 }
+
+/* Маленькие телефоны */
 @media (max-width:480px){
-  .hero-btns .btn{width:100%}
+  .container{padding:0 16px}
+  .hero h1{font-size:28px}
+  .hero-stats{gap:14px}
+  .stat-num{font-size:22px}
+  .stat-label{font-size:11.5px}
+  .section-head h2{font-size:24px}
+  .section-head p{font-size:14.5px}
   .metrics{grid-template-columns:1fr 1fr}
+  .metric:nth-child(3){grid-column:1 / -1}
+  .cta-final h2{font-size:24px}
+  .calc-price{font-size:32px}
+  .float-btn{width:46px;height:46px;font-size:18px}
 }
